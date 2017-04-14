@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Employees:</h1>
+</hr>
+#set( $employeesCounter = 1 )
+<table>
+    <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Hire date</th>
+        <th>Salary</th>
+    </tr>
+    #foreach ( $employee in $employees )
+        <tr>
+            <td>$employeesCounter</td>
+            <td>$employee.name</td>
+            <td>$employee.role</td>
+            <td>$employee.hireDate</td>
+            <td>$employee.salary</td>
+        </tr>
+        #set ( $employeesCounter = $employeesCounter + 1 )
+    #end
+</table>
+</body>
+</html>
